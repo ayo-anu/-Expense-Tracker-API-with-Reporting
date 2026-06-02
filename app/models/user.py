@@ -12,7 +12,7 @@ class User(TimeStampMixin, Base):
     hashed_password = Column(String, nullable=False)
     is_active = Column(Boolean, default=True, nullable=False)
 
-    expenses=relationship("Expense", back_populates="owner", cascade="all, delete-orphan")
+    expenses = relationship("Expense", back_populates="owner", cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"User id={self.id}  email={self.email}"
