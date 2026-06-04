@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, Numeric, String, ForeignKey,
-DateTime, enum as SQLEnum
+from sqlalchemy import Column, Integer, Numeric, String, ForeignKey, DateTime, Enum as SQLEnum
 from sqlalchemy.orm import relationship
 
 from app.db.base import TimeStampMixin, Base
