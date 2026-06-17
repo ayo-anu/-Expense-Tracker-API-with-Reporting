@@ -10,6 +10,9 @@ def create_application()->FastAPI:
         redoc_url="/redoc",
     )
 
+    from app.api.v1.router import api_router
+    application.include_router(api_router, prefix="/api/v1")
+
     return application
 
 app = create_application()
@@ -21,3 +24,6 @@ def health_check():
         "status":"ok",
         "environment":settings.APP_ENV
     }
+
+for routes in app.routes:
+    print(routes.path)
